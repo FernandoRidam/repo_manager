@@ -2,6 +2,7 @@ import React from 'react';
 
 import {
   Input,
+  Button,
 } from 'antd';
 
 import {
@@ -37,8 +38,17 @@ export function Auth() {
             placeholder="Token"
             suffix={<PasteButton />}
             size="large"
+            onPaste={() => console.log('aa')}
           />
         </div>
+
+        <Button
+          className="button"
+          type="primary"
+          size="large"
+        >
+          Prosseguir
+        </Button>
       </div>
     </div>
   );
