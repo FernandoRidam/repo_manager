@@ -42,10 +42,14 @@
   height: 100%;
   border: 0;
   background-color: #303840;
+
+  transition: all .2s;
 }
 
 .paste-button:active {
   opacity: .8;
+
+  transition: all .2s;
 }
 
 .button {

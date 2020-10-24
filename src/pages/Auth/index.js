@@ -26,6 +26,7 @@ export function Auth() {
       </button>
     );
   };
+
   return (
     <div className="auth-container">
       <div className="auth-card">

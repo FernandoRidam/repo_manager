@@ -63,9 +63,19 @@ body {
   .button {
     width: 295px;
   }
+
+  .navbar {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .nav-button {
+    width: 25px;
+    height: 25px;
+  }
 }
 
-@media ( max-width: 500px ) {
+@media ( max-width: 590px ) {
   .content {
     padding-right: 10px;
     padding-left: 10px;
