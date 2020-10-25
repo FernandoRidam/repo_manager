@@ -37,11 +37,11 @@ body {
   background-color: transparent;
 }
 
-.ant-input-affix-wrapper:hover {
+.ant-input:hover {
   border-color: #303840 !important;
 }
 
-.ant-input-affix-wrapper-focused {
+.ant-input:focus {
   border-color: #303840 !important;
   box-shadow: 0 0 0 2px rgba(48, 56, 64, .2) !important;
 }
