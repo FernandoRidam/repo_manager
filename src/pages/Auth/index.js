@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {
+  Form,
   Input,
   Button,
 } from 'antd';
@@ -16,40 +17,74 @@ import {
 import './styles.css';
 
 export function Auth() {
-  function PasteButton() {
-    return (
-      <button className="paste-button">
-        <FaPaste
-          color="#FFF"
-          size={ 20 }
-        />
-      </button>
-    );
+  function handleSubmit( values ) {
+    const {
+      username,
+      token,
+    } = values;
+
+    localStorage.setItem('PRManager@Login', username );
+    localStorage.setItem('PRManager@Token', token );
+  };
+
+  function handleSubmitError( errorInfo  ) {
+    console.log( errorInfo  );
+  };
+
+  const layout = {
+    labelCol: { span: 22 },
+    wrapperCol: { span: 34 },
   };
 
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <LabelCard
-          text="Informe token de acesso"
-        />
-
-        <div className="input-view">
-          <Input
-            placeholder="Token"
-            suffix={<PasteButton />}
-            size="large"
-            onPaste={() => console.log('aa')}
-          />
-        </div>
-
-        <Button
-          className="button"
-          type="primary"
-          size="large"
+        <Form
+          {...layout}
+          name="basic"
+          layout="vertical"
+          initialValues={{ username: '', token: ''}}
+          onFinish={ handleSubmit }
+          onFinishFailed={ handleSubmitError }
         >
-          Prosseguir
-        </Button>
+          <LabelCard
+            text="Informe token de acesso"
+          />
+
+            <Form.Item
+              className="input"
+              label="Usuário GitHub"
+              name="username"
+              rules={[{ required: true, message: 'Informe nome de usuário!' }]}
+            >
+              <Input
+                placeholder="Usuário GitHub"
+                size="large"
+              />
+
+            </Form.Item>
+
+            <Form.Item
+              className="input"
+              label="Token"
+              name="token"
+            >
+              <Input
+                placeholder="Token"
+                size="large"
+                type="password"
+              />
+            </Form.Item>
+
+          <Button
+            className="button"
+            type="primary"
+            htmlType="submit"
+            size="large"
+          >
+            Prosseguir
+          </Button>
+        </Form>
       </div>
     </div>
   );
