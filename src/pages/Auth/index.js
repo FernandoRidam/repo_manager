@@ -68,6 +68,7 @@ export function Auth() {
               className="input"
               label="Token"
               name="token"
+              rules={[{ required: true, message: 'Token é um campo obrigatório!' }]}
             >
               <Input
                 placeholder="Token"
