@@ -17,10 +17,15 @@
 }
 
 .nav-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   width: 35px;
   height: 35px;
   background-color: transparent;
   border: 0;
+  cursor: pointer;
 
   transition: all .2s;
 }

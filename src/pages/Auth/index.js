@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {
+  useContext,
+} from 'react';
 
 import {
   Form,
@@ -7,28 +9,27 @@ import {
 } from 'antd';
 
 import {
-  FaPaste,
-} from "react-icons/fa";
-
-import {
   LabelCard,
 } from '../../components';
 
+import AuthContext from '../../utils/authContext';
+
 import './styles.css';
 
-export function Auth() {
+export function Auth({ history }) {
+  const {
+    signIn,
+  } = useContext(AuthContext);
+
   function handleSubmit( values ) {
     const {
       username,
       token,
     } = values;
 
-    localStorage.setItem('PRManager@Login', username );
-    localStorage.setItem('PRManager@Token', token );
-  };
+    signIn( token, username );
 
-  function handleSubmitError( errorInfo  ) {
-    console.log( errorInfo  );
+    history.push(`/repos/${ username }`);
   };
 
   const layout = {
@@ -45,7 +46,6 @@ export function Auth() {
           layout="vertical"
           initialValues={{ username: '', token: ''}}
           onFinish={ handleSubmit }
-          onFinishFailed={ handleSubmitError }
         >
           <LabelCard
             text="Informe token de acesso"

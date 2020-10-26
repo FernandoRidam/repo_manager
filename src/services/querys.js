@@ -19,3 +19,11 @@ export const GET_REPO = gql`
     }
   }
 `;
+
+export const GET_USER = gql`
+  query getUser($login: String!) {
+    user(login: $login) {
+      login,
+    }
+  }
+`;
