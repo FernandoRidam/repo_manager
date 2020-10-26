@@ -1,29 +1,42 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import {
-  FaArrowLeft,
   FaSignOutAlt
 } from "react-icons/fa";
+
+import history from '../../utils/history';
+
+import AuthContext from '../../utils/authContext';
 
 import './styles.css';
 
 export function Navbar() {
-  const logged = localStorage.getItem('PRManager@Token');
+  const logged = true // localStorage.getItem('PRManager@Token');
+  const username = 'Fernando' // localStorage.getItem('PRManager@Login');
+
+  const {
+    signOut,
+  } = useContext(AuthContext);
+
+  function handleLogout() {
+    signOut();
+
+    history.push('/');
+  };
+
 
   return (
     <div className="navbar">
-      <button className="nav-button">
-        <FaArrowLeft
-          color="#FFF"
-          size="100%"
-        />
-      </button>
+      <div/>
 
       <span className="title">Multi Repo PR Manager</span>
 
       {
         logged
-          ? <button className="nav-button">
+          ? <button
+              className="nav-button"
+              onClick={ handleLogout }
+            >
               <FaSignOutAlt
                 color="#FFF"
                 size="100%"

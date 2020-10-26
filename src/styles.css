@@ -14,7 +14,15 @@ body {
   overflow: hidden;
 }
 
+a {
+  color: #507eac !important;
+}
+
 .head {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
   width: 100%;
   height: 315px;
   background-color: #313840;
@@ -35,6 +43,8 @@ body {
   padding-left: 65px;
   margin-top: 65px;
   background-color: transparent;
+
+  overflow-y: auto;
 }
 
 .ant-input:hover {
@@ -51,9 +61,21 @@ body {
   border-color: #303840 !important;
 }
 
+.ant-table-row-expand-icon:hover, .ant-table-row-expand-icon:focus {
+  color: #507eac !important;
+}
+
+.ant-pagination-item-active {
+  border-color: #507eac !important;
+}
+
+.ant-pagination-item-active a {
+  color: #507eac !important;
+}
+
 @media ( max-width: 400px ) {
   .content {
-    padding-top: 95px;
+    padding-top: 45px;
   }
 
   .input-view {
@@ -72,6 +94,11 @@ body {
   .nav-button {
     width: 25px;
     height: 25px;
+  }
+
+  .card-add-repository {
+    width: 335px;
+    height: 235px;
   }
 }
 

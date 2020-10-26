@@ -1,0 +1,29 @@
+.repos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.card-add-repository {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  width: 375px;
+  height: 235px;
+  padding-top: 55px;
+  padding-bottom: 55px;
+  border-radius: 14px;
+  background-color: #FFF;
+  box-shadow: 0 0 25px rgba(0, 0, 0, .75);
+}
+
+.button-add {
+  position: fixed;
+  right: 35px;
+  bottom: 35px;
+}

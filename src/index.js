@@ -12,10 +12,10 @@ import App from './App';
 import 'antd/dist/antd.css';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.Fragment>
     <ApolloProvider client={client}>
       <App />
     </ApolloProvider>
-  </React.StrictMode>,
+  </React.Fragment>,
   document.getElementById('root')
 );
