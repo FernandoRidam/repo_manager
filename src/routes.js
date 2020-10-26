@@ -78,6 +78,7 @@ export default function Routes() {
     signOut: () => {
       localStorage.removeItem('PRManager@Token');
       localStorage.removeItem('PRManager@Login');
+      localStorage.removeItem('PRManager@Repos');
 
       dispatch({ type: 'SIGN_OUT' });
     },
